@@ -165,6 +165,10 @@
                     Srcc's Pizza<br />
                     The best pizza in the city
                 </div>
+                <p class="poruka"> {{ session('poruka')}}</p>
+                <a href="/pizzas/create">Order a pizza</a>
+
+
             </div>
         </div>
 @endsection
