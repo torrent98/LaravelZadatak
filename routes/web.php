@@ -28,8 +28,9 @@ Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->name('pizzas
 
 
 Auth::routes([
-    'register' => false,
+    'register' => true,
   ]);
   
+//Route::get('/users/profile', [EditProfileController::class, 'edit'])->name('users.edit-profile')->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
