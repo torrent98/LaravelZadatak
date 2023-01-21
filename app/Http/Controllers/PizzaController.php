@@ -7,6 +7,7 @@ use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
+
     public function index(){
 
         // $pizzas = [

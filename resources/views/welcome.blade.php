@@ -163,10 +163,13 @@
                 
                 <div class="title m-b-md">
                     Srcc's Pizza<br />
-                    The best pizza in the city
                 </div>
+                <div class="slogan">
+                    The best pizza in the city<br />
+                </div>
+                
                 <p class="poruka"> {{ session('poruka')}}</p>
-                <a href="/pizzas/create">Order a pizza</a>
+                <a href="{{ route('pizzas.create') }}">Order a pizza</a>
 
 
             </div>

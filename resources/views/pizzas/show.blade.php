@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.app')
 
 @section('content')
 
@@ -14,7 +14,7 @@
           </ul>
 
           
-          <form action="/pizzas/{{ $pizza->id }}" method="POST">
+          <form action="{{ route('pizzas.destroy', $pizza->id) }}" method="POST">
             @csrf
             @method('DELETE')
             <button>Complete Order</button>
@@ -22,4 +22,6 @@
 
     </div>
     
+    <a href="{{ route('pizzas.index') }}" class="back"><- Back to all pizzas</a>
+
 @endsection

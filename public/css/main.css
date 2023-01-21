@@ -49,6 +49,11 @@ html, body {
     margin-bottom: 30px;
 }
 
+.slogan {
+  font-size: 30px;
+  font-style: inherit;
+}
+
 footer{
     background: 181818;
     padding: 20px;
@@ -102,7 +107,7 @@ footer{
   
   /* pizza details page */
   .pizza-details {
-    background: #f7f7f7;
+    background: #181818;
     padding: 20px;
   }
   .pizza-details p {
@@ -110,7 +115,7 @@ footer{
     font-weight: bold;
   }
   .pizza-details button {
-    background: #5e2195;
+    background: #ffc011;
     padding: 8px 20px;
     color: #fff;
     border: 0;
@@ -121,7 +126,7 @@ footer{
     display: block;
     text-align: center;
     margin-top: 30px;
-    color: #5e2195;
+    color: #ffc011;
     margin-bottom: 20px;
   }
   
@@ -132,7 +137,7 @@ footer{
   .pizza-index .pizza-item {
     margin: 10px 0;
     padding: 12px;
-    background: #f4f4f4;
+    background: #181818;
   }
   .pizza-index .pizza-item img {
     width: 60px;
@@ -144,6 +149,6 @@ footer{
     margin-left: 20px;
   }
   .pizza-index .pizza-item h4 a {
-    color: #777;
+    color: rgb(255, 255, 255);
     text-decoration: none !important;
   }
