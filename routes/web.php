@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 
@@ -30,7 +29,12 @@ Route::get('/logout', function () {
     return redirect('login');
 });
 
+//REGISTER
+Route::view('/register', 'register');
+
 Route::post('/login', [UserController::class, 'login']);
+Route::post('/register', [UserController::class, 'register']);
+
 
 //PRODUCTS
 Route::get("/",[ProductController::class,'index']);
