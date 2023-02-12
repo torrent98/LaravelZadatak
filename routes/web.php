@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PizzaController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\PizzaProductController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -26,25 +26,26 @@ Route::get('/login', function () {
 //LOGOUT RUTA
 
 Route::get('/logout', function () {
-    Session::forget('customer');
+    Session::forget('user');
     return redirect('login');
 });
 
-Route::post('/login', [CustomerController::class, 'login']);
+Route::post('/login', [UserController::class, 'login']);
 
-Route::get("/",[PizzaProductController::class,'index']);
+//PRODUCTS
+Route::get("/",[ProductController::class,'index']);
+Route::get("detail/{id}",[ProductController::class,'detail']);
+Route::get("search",[ProductController::class,'search']);
 
-Route::get("detail/{id}",[PizzaProductController::class,'detail']);
-Route::get("search",[PizzaProductController::class,'search']);
+//CART
+Route::post("add_to_cart",[ProductController::class,'addToCart']);
+Route::get("cartlist",[ProductController::class,'cartList']); 
+Route::get("removecart/{id}",[ProductController::class,'removeCart']); 
 
-Route::post("add_to_cart",[PizzaProductController::class,'addToCart']);
-Route::get("cartlist",[PizzaProductController::class,'cartList']); 
-
-Route::get("removecart/{id}",[PizzaProductController::class,'removeCart']); 
-
-Route::get("ordernow",[PizzaProductController::class,'orderNow']); 
-Route::post("orderplace",[PizzaProductController::class,'orderPlace']);
-Route::get("myorders",[PizzaProductController::class,'myOrders']);
+//ORDERS
+Route::get("ordernow",[ProductController::class,'orderNow']); 
+Route::post("orderplace",[ProductController::class,'orderPlace']);
+Route::get("myorders",[ProductController::class,'myOrders']);
 
 /*
 Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas.index')->middleware('auth');

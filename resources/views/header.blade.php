@@ -1,9 +1,9 @@
 <?php 
-  use App\Http\Controllers\PizzaProductController;
+  use App\Http\Controllers\ProductController;
   $total=0;
-  if(Session::has('customer')) {
+  if(Session::has('user')) {
 
-    $total= PizzaProductController::cartItem();
+    $total= ProductController::cartItem();
 
   }
 ?>
@@ -45,9 +45,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/cartlist">cart({{$total}})</a></li>
 
-        @if(Session::has('customer'))
+        @if(Session::has('user'))
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Session::get('customer')['name']}}
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Session::get('user')['name']}}
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="/logout">Logout</a></li>

@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
-class CustomerssssSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +14,11 @@ class CustomerssssSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('customerssss')->insert([
+        //
+        DB::table('users')->insert([
             'name'=>'zarko colic',
             'email'=>'zarko@gmail.com',
-            'password'=>Hash::make('123456')
+            'password'=>Hash::make('12345')
         ]);
     }
 }

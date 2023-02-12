@@ -6,22 +6,22 @@ use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
-use App\Models\Customer;
+use App\Models\User;
 
-class CustomerController extends Controller {
+class UserController extends Controller {
     //
     function login(Request $req)
     {
 
-        $customer= Customer::where(['email'=>$req->email])->first();
+        $user= User::where(['email'=>$req->email])->first();
 
-        if(!$customer || !Hash::check($req->password,$user->password)) {
+        if(!$user || !Hash::check($req->password,$user->password)) {
 
             return "Username or password is not matched";
 
         } else{
 
-            $req->session()->put('customer',$customer);
+            $req->session()->put('user',$user);
             return redirect('/');
             
         }
