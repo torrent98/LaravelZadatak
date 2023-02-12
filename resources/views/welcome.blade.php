@@ -131,7 +131,7 @@
     </body>
 </html> --}}
 
-@extends('layouts.layouts')
+@extends('layouts')
 
 @section('content')
     
