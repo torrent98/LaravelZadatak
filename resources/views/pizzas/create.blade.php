@@ -4,7 +4,7 @@
 
 <div class="wrapper create-pizza">
 
-    <h1>Create a New Pizza</h1>
+    <h1>Create a New Customer Order</h1>
 
     <form action="{{ route('pizzas.store') }}" method="POST">
 

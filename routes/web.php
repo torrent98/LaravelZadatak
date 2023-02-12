@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PizzaController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +15,21 @@ use App\Http\Controllers\PizzaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('login');
 });
 
+Route::post('/login', [CustomerController::class, 'login']);
 
+Route::get("/",[ProductController::class,'index']);
+
+/*
 Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas.index')->middleware('auth');
 Route::get('/pizzas/create', [PizzaController::class, 'create'])->name('pizzas.create');
 Route::post('/pizzas', [PizzaController::class, 'store'])->name('pizzas.store');
 Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show')->middleware('auth');
 Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->name('pizzas.destroy')->middleware('auth');
-
+*/
 
 
 Auth::routes([
